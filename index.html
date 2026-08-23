@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>For Swayansh — With Love</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+:root{
+ --navy:#062b61;--blue:#0b559c;--sky:#dff4ff;--ice:#f8fcff;
+ --line:#a9d5ed;--pink:#e9a9c4;--text:#183c61;
+ --shadow:0 22px 65px rgba(5,43,97,.15);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#cfeaf8;color:var(--text);
+ font-family:"DM Sans",sans-serif;
+}
+.story{
+ width:min(100%,1120px);margin:auto;background:var(--ice);
+ box-shadow:0 0 90px rgba(2,35,75,.2);overflow:hidden;
+}
+section{
+ min-height:100vh;display:none;position:relative;overflow:hidden;
+ padding:70px clamp(22px,7vw,80px);align-items:center;justify-content:center;
+ border-bottom:1px solid var(--line);
+}
+section.active{display:flex;animation:appear .7s ease}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.inner{width:100%;max-width:900px;margin:auto;text-align:center;position:relative;z-index:4}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy)}
+h1{font-size:clamp(58px,9vw,100px);line-height:.88;margin:14px 0}
+h2{font-size:clamp(44px,7vw,70px);line-height:.95;margin:10px 0 20px}
+h3{font-size:30px;margin:0 0 12px}
+p{font-size:clamp(17px,2vw,21px);line-height:1.75}
+.kicker{font-size:12px;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.script{font-family:"Great Vibes",cursive;font-size:clamp(32px,5vw,52px);color:#c36d92}
+.ornament{width:110px;height:1px;background:#7bb8dd;margin:22px auto;position:relative}
+.ornament:before,.ornament:after{position:absolute;top:-14px;font-size:18px;color:#c36d92}
+.ornament:before{content:"♡";left:-4px}.ornament:after{content:"♡";right:-4px}
+.btn{
+ border:0;background:var(--navy);color:white;padding:15px 34px;
+ border-radius:30px;font:600 16px "DM Sans";cursor:pointer;
+ margin-top:25px;box-shadow:0 10px 25px rgba(6,43,97,.2);transition:.25s
+}
+.btn:hover{background:var(--blue);transform:translateY(-3px)}
+.decor{position:absolute;z-index:1;pointer-events:none;color:#c36d92;opacity:.55}
+.flower{font-size:42px}.heart{font-size:35px}.balloon{font-size:52px}
+.f1{left:4%;top:8%}.f2{right:4%;top:13%}.f3{left:7%;bottom:9%}.f4{right:7%;bottom:8%}
+.h1{left:18%;top:15%}.h2{right:18%;top:25%}.h3{left:18%;bottom:18%}.h4{right:17%;bottom:14%}
+.b1{left:3%;top:30%}.b2{right:3%;top:40%}
+.corner{position:absolute;width:88px;height:88px;border-color:#78b5da;border-style:solid;opacity:.75;z-index:2}
+.tl{top:25px;left:25px;border-width:1px 0 0 1px}.tr{top:25px;right:25px;border-width:1px 1px 0 0}
+.bl{bottom:25px;left:25px;border-width:0 0 1px 1px}.br{bottom:25px;right:25px;border-width:0 1px 1px 0}
+.hero{background:radial-gradient(circle at center,#fff,#e2f6ff)}
+.hero-photo{
+ width:min(320px,67vw);aspect-ratio:1;margin:28px auto;border-radius:50%;
+ border:9px solid white;box-shadow:var(--shadow);overflow:hidden
+}
+.photo{
+ background:linear-gradient(145deg,#eefaff,#d6effb);
+ border:1px solid #b8d9ea;min-height:260px;border-radius:8px;
+ display:flex;align-items:center;justify-content:center;
+ color:#5a86a2;font-size:19px;font-weight:600;overflow:hidden
+}
+.photo img,.photo video{width:100%;height:100%;object-fit:cover;display:block}.story-frame .photo img{height:58vh;min-height:380px;object-fit:cover}
+.reveal{background:linear-gradient(135deg,#e9f8ff,#d4efff)}
+.reveal .hero-photo{max-width:370px}
+.memory{background:#fbfdff}
+.music{width:min(480px,100%);margin:12px auto}
+.music-wrap{margin:8px auto 18px}
+.music-note{font-size:13px;color:#5b7d98;margin:4px 0}
+.music-wrap .script{font-size:30px}
+.song-player{width:min(720px,100%);margin:12px auto 18px;background:#fff;padding:10px;border:1px solid #c4e0ef;box-shadow:0 10px 28px rgba(5,43,97,.10);border-radius:12px}
+.song-frame{width:100%;height:405px;border:0;border-radius:8px;display:block}
+@media(max-width:650px){.song-frame{height:230px}}
+.story-frame{
+ max-width:680px;margin:25px auto;background:#fff;padding:13px;
+ box-shadow:var(--shadow);border:1px solid #c4e0ef
+}
+.story-frame .photo{min-height:58vh;height:58vh}
+.story-frame .photo img{width:100%;height:100%;object-fit:contain;display:block;background:#eef8fd}
+.caption{font-family:"Cormorant Garamond",serif;font-size:28px;color:var(--navy);padding:15px}
+.story-controls{display:flex;align-items:center;justify-content:center;gap:15px}
+.story-controls button{
+ width:44px;height:44px;border-radius:50%;border:1px solid #9cc9e6;
+ background:#eef9ff;color:var(--navy);font-size:22px;cursor:pointer
+}
+.counter{font-size:13px;color:#5b7d98}
+.prabhas{background:linear-gradient(135deg,#f7fcff,#d9f2ff)}
+.prabhas-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:35px auto;max-width:850px}
+.prabhas-card{
+ background:#fff;padding:12px;border:1px solid #c4e0ef;box-shadow:var(--shadow)
+}
+.prabhas-card .photo{height:430px;min-height:0}
+.photo-label{font-family:"Cormorant Garamond";font-size:25px;color:var(--navy);padding:12px}
+.note{
+ max-width:700px;margin:20px auto;padding:16px 20px;
+ background:#eef9ff;border-left:3px solid var(--blue);text-align:left
+}
+
+.personal-memories{background:linear-gradient(135deg,#f9fdff,#e2f5ff)}
+.personal-memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px;margin:30px auto}
+.personal-card{background:#fff;border:1px solid #c4e0ef;box-shadow:0 16px 45px rgba(5,43,97,.12);padding:10px;text-align:left}
+.personal-card .photo{height:330px;min-height:0}
+.personal-card .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.personal-text{padding:16px 14px 12px}
+.memory-number{font-size:11px;letter-spacing:2px;color:#0b559c;font-weight:700;margin-bottom:8px}
+.personal-text p{font-size:16px;line-height:1.65;margin:0;color:#183c61}
+@media(max-width:700px){.personal-memory-grid{grid-template-columns:1fr}.personal-card .photo{height:360px}}
+.final{background:linear-gradient(135deg,#eaf8ff,#ccecff)}
+.final .inner{max-width:1050px}
+.couple{display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:760px;margin:28px auto}
+.couple .photo{min-height:280px}
+.about{background:#fbfdff}
+.about-box{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;text-align:left}
+.about-box .photo{min-height:360px}
+.letter-page{background:linear-gradient(135deg,#eaf8ff,#d9f1fc)}
+.letter{
+ max-width:790px;margin:auto;background:#fff;padding:clamp(32px,6vw,70px);
+ text-align:left;box-shadow:var(--shadow);border:1px solid #c9e1ee;position:relative
+}
+.letter:before{content:"";position:absolute;inset:15px;border:1px solid #d9e9f2;pointer-events:none}
+.letter-content{position:relative;z-index:2;padding:15px}
+.signature{font-family:"Great Vibes",cursive;text-align:right;font-size:36px;color:#b96589;margin-top:30px}
+.footer{background:var(--navy);color:#dff4ff;text-align:center;padding:30px;font-size:14px}
+@media(max-width:650px){
+ section{padding:65px 20px}.corner{width:58px;height:58px;top:15px}.tl{left:15px}.tr{right:15px}
+ .prabhas-grid,.couple,.about-box{grid-template-columns:1fr}
+ .prabhas-card .photo{height:380px}
+}
+
+/* Video memories */
+.video-grid{display:grid;grid-template-columns:1fr;gap:28px;max-width:1000px;margin:32px auto}
+.video-card{position:relative;background:#fff;border:1px solid #c4e0ef;box-shadow:0 18px 48px rgba(5,43,97,.14);padding:12px;border-radius:12px}
+.video-card video{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:contain;background:#0c1824;border-radius:7px}
+.video-play-symbol{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(11,85,156,.88);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;padding-left:4px;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.video-label{font-weight:700;font-size:14px;letter-spacing:1px;padding:13px 6px 4px;color:#0b559c;text-align:center}
+.about-box .photo{overflow:hidden}
+.about-box .photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:700px){.video-grid{grid-template-columns:1fr;gap:20px}.video-card{padding:8px}.video-play-symbol{width:56px;height:56px}}
+/* Clean favorite portrait */
+.portrait-feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:34px;align-items:center;max-width:880px;margin:32px auto 0;background:#fff;border:1px solid #cfe3ee;border-radius:24px;padding:18px;box-shadow:0 18px 55px rgba(5,43,97,.12);text-align:left}
+.portrait-image{height:560px;border-radius:17px;overflow:hidden;background:#eef8fd}
+.portrait-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.portrait-copy{padding:16px 22px 16px 4px}
+.portrait-tag{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#0b559c;font-weight:700;margin-bottom:12px}
+.portrait-copy h3{font-size:42px;line-height:1.05;margin:0 0 16px}
+.portrait-copy p{font-size:17px;line-height:1.75;margin:0 0 14px}
+.portrait-line{width:70px;height:2px;background:#c36d92;margin:20px 0}
+.portrait-closing{color:#6b4660}
+@media(max-width:700px){.portrait-feature{grid-template-columns:1fr;padding:10px;gap:8px}.portrait-image{height:480px}.portrait-copy{padding:18px 14px 22px}.portrait-copy h3{font-size:34px}}
+
+.profile-card{max-width:900px;margin:28px auto 0;background:rgba(255,255,255,.92);border:1px solid #c4e0ef;box-shadow:0 14px 38px rgba(5,43,97,.12);padding:26px;border-radius:22px;text-align:left}
+.profile-title{text-align:center;font-family:"Playfair Display",serif;font-size:28px;color:#0b559c;margin-bottom:18px}
+.profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px}
+.profile-item{padding:14px 16px;background:#f7fbfe;border:1px solid #d9e9f2;border-radius:14px}
+.profile-item span{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#7a93a8;margin-bottom:5px}
+.profile-item strong{font-size:16px;color:#16344f}
+.profile-item a{color:#0b559c;text-decoration:none;font-weight:700}
+.profile-note{text-align:center;margin-top:18px;font-style:italic;font-weight:700;color:#6b4660}
+@media(max-width:700px){.profile-grid{grid-template-columns:1fr}.profile-card{padding:18px}}
+
+
+.feedback-page{background:linear-gradient(135deg,#fff7fb,#e4f5ff)}
+.feedback-card{width:min(680px,100%);margin:28px auto 10px;background:rgba(255,255,255,.96);padding:28px;border:1px solid #c4e0ef;border-radius:24px;box-shadow:var(--shadow);text-align:left}
+.feedback-card label{display:block;margin:0 0 8px;color:var(--navy);font-weight:700;font-size:14px}
+.feedback-card input,.feedback-card textarea{width:100%;border:1px solid #b9d8ea;border-radius:14px;padding:14px 16px;margin:0 0 18px;font:16px "DM Sans",sans-serif;color:var(--text);background:#fbfeff;outline:none;transition:.2s}
+.feedback-card input:focus,.feedback-card textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,85,156,.10)}
+.feedback-card textarea{resize:vertical;min-height:150px;line-height:1.6}
+.feedback-card .btn{display:block;margin:8px auto 0}
+.feedback-note{text-align:center!important;font-size:13px!important;line-height:1.5!important;color:#66839a;margin:15px 0 0!important}
+.secondary-btn{background:#fff;color:var(--navy);border:1px solid #9cc9e6}
+.secondary-btn:hover{background:#eef9ff}
+@media(max-width:650px){.feedback-card{padding:20px}}
+
+</style>
+</head>
+<body>
+<main class="story">
+<!-- 1 -->
+<section class="active hero" id="s1">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f2">🌷</span><span class="decor flower f3">🌸</span><span class="decor flower f4">🌺</span>
+<span class="decor heart h1">♡</span><span class="decor heart h2">♥</span><span class="decor heart h3">♡</span><span class="decor heart h4">♥</span>
+<span class="decor balloon b1">🎈</span><span class="decor balloon b2">🎈</span>
+<div class="inner">
+<div class="kicker">A little surprise, made with love</div>
+<div class="ornament"></div>
+<div class="script">For someone very special...</div>
+<h1>Hi, how are you?</h1>
+<p>I think you are my friend,<br/><strong>my best friend.</strong></p>
+<div class="photo hero-photo"><img alt="Swayansh" src="assets/photos/01_swayansh.jpg"/></div>
+<p>But before I continue, I have one question for you.</p>
+<button class="btn" onclick="next('s2')">Are you the one? ♡</button>
+</div>
+</section>
+<!-- 2 -->
+<section class="reveal" id="s2">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f4">🌹</span><span class="decor heart h2">♡</span><span class="decor heart h3">♥</span>
+<div class="inner">
+<div class="kicker">I already knew the answer</div>
+<h2>You are Swayansh. 💙</h2>
+<div class="ornament"></div>
+<div class="photo hero-photo"><img alt="Swayansh" src="assets/photos/02_swayansh.jpg"/></div>
+<p>Yes. You are the one this little story was made for.</p>
+<button class="btn" onclick="next('s3')">Then let's go back in time →</button>
+</div>
+</section>
+<!-- 3 -->
+<section class="memory" id="s3">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌼</span><span class="decor flower f2">🌸</span><span class="decor heart h1">♡</span><span class="decor heart h4">♥</span>
+<div class="inner">
+<div class="kicker">Chapter One</div><h2>Our Old Memories</h2><div class="ornament"></div>
+<p>Some moments pass in seconds.<br/>Some stay with us forever.</p>
+
+<div class="story-frame">
+<div class="photo" id="memoryPhoto"># photo 01</div>
+<div class="caption" id="caption">Where it all began. 💙</div>
+<div class="story-controls"><button onclick="prevMemory()">‹</button><span class="counter" id="counter">01 / 12</span><button onclick="nextMemory()">›</button></div>
+</div>
+<button class="btn" onclick="next('s4')">There is more... →</button>
+</div>
+</section>
+<!-- 4 -->
+<section class="prabhas" id="s4">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f4">🌺</span><span class="decor heart h2">♡</span><span class="decor balloon b2">🎈</span>
+<div class="inner">
+<div class="kicker">Chapter Two</div><h2>TFI Banisa 🎬</h2><div class="ornament"></div>
+<p>Now comes the part that needs absolutely no explanation.</p>
+<div class="script">Prabhas &amp; cinema ❤️</div>
+<div class="note"><strong>Two big memories.</strong><br/>Use these two large frames for the best Prabhas-related photos — one for Swayansh and one for Prabhas.</div>
+<div class="prabhas-grid">
+<div class="prabhas-card"><div class="photo"><img alt="Swayansh and Telugu cinema" src="assets/photos/03_swayansh_and_telugu_cinema.jpg"/></div><div class="photo-label">The true TFI Banisa ♡</div></div>
+<div class="prabhas-card"><div class="photo"><img alt="Prabhas and cinema" src="assets/photos/04_prabhas_and_cinema.jpg"/></div><div class="photo-label">The legend himself 🎬</div></div>
+</div>
+<p>Because some people watch movies...<br/><strong>and some people live them.</strong></p>
+<button class="btn" onclick="next('s4b')">Now, some memories from me →</button>
+</div>
+</section>
+<!-- 4 personal memories -->
+<section class="memory personal-memories" id="s4b">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f2">🌷</span>
+<span class="decor flower f3">🌼</span><span class="decor flower f4">🌹</span>
+<span class="decor heart h1">♡</span><span class="decor heart h2">♥</span>
+<span class="decor heart h3">♡</span><span class="decor heart h4">♥</span>
+<div class="inner">
+<div class="kicker">Chapter Three</div>
+<h2>Some Memories, Just for You</h2>
+<div class="ornament"></div>
+<p><strong><i>Four moments. Four little stories. A thousand feelings.</i></strong></p>
+<div class="personal-memory-grid">
+<article class="personal-card">
+<div class="photo"><img alt="First hackathon memory" src="assets/photos/05_first_hackathon_memory.jpg"/></div>
+<div class="personal-text">
+<div class="memory-number">01 · THE FIRST STEP</div>
+<p><strong><i>My first hackathon — that with you, a very memorable loss. But still, it was the first step of mine towards it, and you are the one who supported me.</i></strong></p>
+</div>
+</article>
+<article class="personal-card">
+<div class="photo"><img alt="A special memory with Swayansh" src="assets/photos/06_a_special_memory_with_swayansh.jpg"/></div>
+<div class="personal-text">
+<div class="memory-number">02 · THANK YOU RA</div>
+<p><strong><i>Nanu nammi Nakodar mime ki oppukunavu, migathavalani opinchav. Naaku enno memories and kotha friends ni parichayam cheppinchav. Thank uuu ra, thankuu so much..</i></strong></p>
+</div>
+</article>
+<article class="personal-card">
+<div class="photo"><img alt="Last day of first semester" src="assets/photos/07_last_day_of_first_semester.jpg"/></div>
+<div class="personal-text">
+<div class="memory-number">03 · LAST DAY OF FIRST SEM</div>
+<p><strong><i>Last day of first sem... aa sem tho mana vere class ki maripotham anna aa badha. And nitho aroju entho enjoy chesa. I still remember aroju niku kuda nene bill katta, but still it's okay — ne kosam edhi ayina...</i></strong></p>
+</div>
+</article>
+<article class="personal-card">
+<div class="photo"><img alt="A memorable day together" src="assets/photos/08_a_memorable_day_together.jpg"/></div>
+<div class="personal-text">
+<div class="memory-number">04 · ALWAYS FOR YOU</div>
+<p><strong><i>Malli chala rojulu tarwata kalisi almost oka 4 to 5 hours unnam. And aroju manam chesina anni doola pannulu inka evaru chesi undaru. Kani aroju niku tea set chesa. And allage eppudu edhi kavali ana nikosam nenu set cheyataniki ready ga unna...</i></strong></p>
+</div>
+</article>
+</div>
+<button class="btn" onclick="next('s5')">Continue, Swayansh ♡ →</button>
+</div>
+</section>
+<!-- 5 -->
+<section class="final" id="s5">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f2">🌷</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Four</div><h2>Thank You, Swayansh. 🎂</h2><div class="ornament"></div>
+<p>We are so happy for you, Swayansh.</p>
+<p><strong>We really love you so much.</strong></p>
+<p>This website is completely dedicated to you — for every memory, every laugh, every crazy moment and every little thing that makes you special.</p>
+<p>You are here for me as a <strong>CR, as a best friend, as a partner, as everything.</strong></p>
+<p>I love you so much. 💙</p>
+<div class="couple"><div class="video-grid">
+<div class="video-card">
+<video controls="" poster="assets/posters/01_poster.jpg" preload="metadata">
+<source src="assets/videos/01_birthday_memory.mp4" type="video/mp4"/>
+        Your browser does not support video playback.
+      </video>
+<span class="video-play-symbol">▶</span>
+<div class="video-label">Memory Video 1</div>
+</div>
+<div class="video-card">
+<video controls="" poster="assets/posters/02_poster.jpg" preload="metadata">
+<source src="assets/videos/02_birthday_memory.mp4" type="video/mp4"/>
+        Your browser does not support video playback.
+      </video>
+<span class="video-play-symbol">▶</span>
+<div class="video-label">Memory Video 2</div>
+</div>
+<div class="video-card">
+<video controls="" poster="assets/posters/03_poster.jpg" preload="metadata">
+<source src="assets/videos/03_birthday_memory.mp4" type="video/mp4"/>
+        Your browser does not support video playback.
+      </video>
+<span class="video-play-symbol">▶</span>
+<div class="video-label">Memory Video 3</div>
+</div>
+<div class="video-card">
+<video controls="" poster="assets/posters/04_poster.jpg" preload="metadata">
+<source src="assets/videos/04_birthday_memory.mp4" type="video/mp4"/>
+        Your browser does not support video playback.
+      </video>
+<span class="video-play-symbol">▶</span>
+<div class="video-label">Memory Video 4</div>
+</div></div></div>
+<button class="btn" onclick="next('s6')">A little more about you →</button>
+</div>
+</section>
+<!-- 6 -->
+<section class="about" id="s6">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌼</span><span class="decor flower f4">🌸</span><span class="decor heart h2">♡</span><span class="decor heart h3">♥</span>
+<div class="inner">
+<div class="kicker">Chapter Five</div><h2>My Favorite Portrait 📸</h2><div class="ornament"></div>
+<div class="portrait-feature">
+  <div class="portrait-image"><img src="assets/photos/09_favorite_portrait.jpg" alt="Swayansh — favorite portrait"/></div>
+  <div class="portrait-copy">
+    <div class="portrait-tag">A portrait worth keeping</div>
+    <h3>This one had to be here. 💙</h3>
+    <p>Some photos are beautiful because of the place. Some because of the moment. This one is simply <strong>you</strong>.</p>
+    <p>The smile, the sea and that quiet little moment — everything about this picture feels like a memory I want to keep forever.</p>
+    <div class="portrait-line"></div>
+    <p class="portrait-closing"><i>My favourite portrait of you — simple, peaceful and completely you.</i></p>
+  </div>
+</div>
+<button class="btn" onclick="next('s7')">About Swayansh →</button>
+</div>
+</section>
+<!-- 7 -->
+<section class="about swayansh-about" id="s7">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f4">🌺</span><span class="decor heart h2">♡</span><span class="decor heart h3">♥</span>
+<div class="inner">
+<div class="kicker">Chapter Six</div><h2>About Swayansh 💙</h2><div class="ornament"></div>
+<p class="script">The person behind all these memories.</p>
+<div class="profile-card">
+<div class="profile-title">Swayansh ✨</div>
+<div class="profile-grid">
+<div class="profile-item"><span>Phone</span><strong><a href="tel:+918249370705">+91 82493 70705</a></strong></div>
+<div class="profile-item"><span>Instagram</span><strong><a href="https://instagram.com/swayansh_23" target="_blank" rel="noopener">@swayansh_23</a></strong></div>
+<div class="profile-item"><span>College</span><strong>Andhra University College of Engineering</strong></div>
+<div class="profile-item"><span>Branch &amp; Class</span><strong>CSE 8 · 2nd Year</strong></div>
+<div class="profile-item"><span>From</span><strong>Odisha</strong></div>
+<div class="profile-item"><span>Passion</span><strong>TFI Banisa 🎬 · Prabhas Die-Hard Fan ❤️</strong></div>
+</div>
+<p class="profile-note">A movie lover, a friend, a dreamer — and someone worth celebrating. 🌸❤️</p>
+</div>
+<button class="btn" onclick="next('s8')">Finally... read this 💌</button>
+</div>
+</section>
+<!-- 8 -->
+<section class="letter-page" id="s8">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f2">🌹</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Seven · A letter, just for you</div><div class="ornament"></div>
+<div class="letter"><div class="letter-content">
+<div class="script">Dear Swayansh,</div>
+<p>Happy Birthday to one of the most important people in my life.</p>
+<p>I don't know if a website can ever explain how much someone means to you, but I wanted to try anyway. So I collected our memories, the silly moments, the movie madness and the little things that make our friendship what it is.</p>
+<p>Thank you for being there. Thank you for being my friend, my best friend, my partner and my everything.</p>
+<p>I hope this new year of your life gives you everything you dream about — more happiness, more success, more unforgettable memories, more movies and, of course, plenty of Prabhas. 🎬</p>
+<p>No matter where life takes us, I hope we always have stories to look back on and laugh about.</p>
+<p><strong>This little website is my small way of saying how special you are to me.</strong></p>
+<div class="signature">With all my love,<br/>Someone who is lucky to have you. 💙</div>
+</div></div>
+<p class="script">Happy Birthday, Swayansh! 🎈🎂🌸</p>
+<button class="btn" onclick="next('s9')">Write something for me 💌</button>
+</div>
+</section>
+<!-- 9 -->
+<section class="feedback-page" id="s9">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌸</span><span class="decor flower f2">🌷</span><span class="decor flower f3">🌺</span><span class="decor heart h1">♡</span><span class="decor heart h4">♥</span>
+<div class="inner">
+<div class="kicker">Chapter Eight · Your turn</div><div class="ornament"></div>
+<h2>Your words to me — write here 💌</h2>
+<p class="script">I wrote everything I wanted to say... now I want to hear from you.</p>
+<form class="feedback-card" onsubmit="sendFeedback(event)">
+<label for="feedbackName">Your name</label>
+<input id="feedbackName" name="name" type="text" placeholder="Write your name (optional)"/>
+<label for="feedbackMessage">Your message</label>
+<textarea id="feedbackMessage" name="message" rows="7" placeholder="Write whatever you want to tell me... ❤️" required></textarea>
+<button class="btn" type="submit">Send it to Dhanunjay 💙</button>
+<p class="feedback-note">It will open your email app with the message addressed to <strong>dhanunjayreddy905@gmail.com</strong>.</p>
+</form>
+<button class="btn secondary-btn" onclick="next('s1')">Start the story again ↻</button>
+</div>
+</section>
+<div class="footer">Made especially for Swayansh • memories, cinema, flowers &amp; love ♡</div>
+</main>
+<script>
+const sections=[...document.querySelectorAll("section")];
+function next(id){
+ sections.forEach(s=>s.classList.remove("active"));
+ const target=document.getElementById(id);
+ target.classList.add("active");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="s3"){
+   // The song is provided through the official YouTube player; browsers generally block autoplay with sound.
+ }
+}
+function sendFeedback(event){
+ event.preventDefault();
+ const name=document.getElementById("feedbackName").value.trim();
+ const message=document.getElementById("feedbackMessage").value.trim();
+ if(!message) return;
+ const subject="A message from Swayansh 💙";
+ const body=(name?"From: "+name+"\n\n":"")+message;
+ window.location.href="mailto:dhanunjayreddy905@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+}
+const memories=[
+  ["assets/photos/old_memory_01_portrait.jpg","Acham kothii laga unnav ee, animuthyam nina tessindhi😂."],
+  ["assets/photos/old_memory_02_temple.jpg","A happy devotional time with you, nenu set chesa aroju anni..."],
+  ["assets/photos/old_memory_03_event.jpg","Department Day lo pichivalla la eggiram😎😉, full vibe ayya ra."],
+  ["assets/photos/old_memory_04_aura.jpg","Ethnic Day aroju nitho ekkuva time gadapaledu kani gadipina antha time chala enjoy chesa."],
+  ["assets/photos/old_memory_05_aura_group.jpg","A day full of people, laughter and moments worth saving. 🌸"],
+  ["assets/photos/old_memory_06_ifr_milan.jpg","Another unforgettable day together. 🌊✨"],
+  ["assets/photos/old_memory_07_friends.jpg","Friends who made ordinary college days feel special. 💙"],
+  ["assets/photos/old_memory_08_event_crowd.jpg","The kind of day that becomes a story later. 🎬"],
+  ["assets/photos/old_memory_09_joker_group.jpg","One crazy memory at a time. 🤡😂"],
+  ["assets/photos/old_memory_10_joker_selfie.jpg","Pure madness, pure fun, unforgettable people. 🖤"],
+  ["assets/photos/old_memory_13_beach_group.jpg","A beautiful memory by the sea — together, smiling and holding on to the moment. 🌊💙"],
+  ["assets/photos/old_memory_14_funny_college.jpg","The random, crazy little moments that make college memories unforgettable. 😂💙"]
+];
+let i=0;
+function renderMemory(){
+ const frame=document.getElementById("memoryPhoto");
+ frame.innerHTML='<img src="'+memories[i][0]+'" alt="Old memory '+String(i+1).padStart(2,"0")+'">';
+ document.getElementById("caption").textContent=memories[i][1];
+ document.getElementById("counter").textContent=String(i+1).padStart(2,"0")+" / "+String(memories.length).padStart(2,"0");
+}
+function nextMemory(){i=(i+1)%memories.length;renderMemory()}
+function prevMemory(){i=(i-1+memories.length)%memories.length;renderMemory()}
+</script>
+</body>
+</html>
