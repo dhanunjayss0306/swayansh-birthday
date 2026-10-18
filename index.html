@@ -138,4 +138,861 @@ p{font-size:clamp(16px,2vw,19.5px);line-height:1.75}
  box-shadow:var(--shadow);
 }
 .auth-question{
- font-family:"Cormorant
+ font-family:"Cormorant Garamond",serif;
+ font-size:30px;
+ font-weight:700;
+ color:var(--crimson);
+ margin:0 0 14px;
+}
+.auth-input{
+ width:100%;
+ padding:14px 18px;
+ border:2px solid #eba4b0;
+ border-radius:14px;
+ font:600 17px "DM Sans",sans-serif;
+ text-align:center;
+ color:var(--text);
+ background:#fffafb;
+ outline:none;
+ transition:.2s;
+}
+.auth-input:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(181,23,46,.14)}
+.auth-error{
+ color:#d91b38;
+ font-size:14px;
+ font-weight:600;
+ margin-top:12px;
+ display:none;
+}
+.auth-success{
+ display:none;
+ margin-top:18px;
+ padding:18px;
+ border-radius:16px;
+ background:linear-gradient(135deg,#fff0f3,#ffe3e8);
+ border:1px solid #e68a99;
+ animation:appear .4s ease;
+}
+
+/* Timeline Grid */
+.timeline-sec{background:linear-gradient(135deg,#fffafb,#ffe8ec)}
+.timeline-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:24px;
+ max-width:900px;
+ margin:30px auto;
+}
+.personal-card{
+ background:#fff;
+ border:1px solid #f0b8c2;
+ border-radius:18px;
+ box-shadow:0 16px 45px rgba(110,7,24,.10);
+ padding:12px;
+ text-align:left;
+ display:flex;
+ flex-direction:column;
+ transition:transform .25s ease;
+}
+.personal-card:hover{transform:translateY(-4px)}
+.personal-card .photo{height:320px;min-height:0;border-radius:12px}
+.personal-card .photo img{width:100%;height:100%;object-fit:cover}
+.personal-card .photo img.contain-img{object-fit:contain;background:#fff4f6}
+.personal-text{padding:16px 12px 10px}
+.memory-number{font-size:11px;letter-spacing:2px;color:var(--red);font-weight:700;margin-bottom:8px;text-transform:uppercase}
+.personal-text p{font-size:15.5px;line-height:1.65;margin:0;color:var(--text)}
+
+/* Carousel Story Frame (Kailasagiri) */
+.memory{background:#fff8f9}
+.story-frame{
+ max-width:700px;
+ margin:25px auto;
+ background:#fff;
+ padding:14px;
+ border-radius:20px;
+ box-shadow:var(--shadow);
+ border:1px solid #f0b8c2;
+}
+.story-frame .photo{min-height:56vh;height:56vh;border-radius:14px}
+.story-frame .photo img{width:100%;height:100%;object-fit:contain;display:block;background:#fff2f5}
+.caption{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;color:var(--crimson);padding:16px 12px 10px}
+.story-controls{display:flex;align-items:center;justify-content:center;gap:16px;padding-bottom:6px}
+.story-controls button{
+ width:44px;height:44px;border-radius:50%;border:1px solid #e69aa6;
+ background:#fff0f3;color:var(--crimson);font-size:22px;cursor:pointer;transition:.2s
+}
+.story-controls button:hover{background:var(--red);color:#fff}
+.counter{font-size:13px;font-weight:700;color:#8f3847}
+
+/* Squad & Carnival Nights */
+.nights-sec{background:linear-gradient(135deg,#fff4f6,#ffdce2)}
+.banner-frame{
+ max-width:880px;
+ margin:24px auto;
+ background:#fff;
+ padding:12px;
+ border-radius:20px;
+ border:1px solid #f0b8c2;
+ box-shadow:var(--shadow);
+}
+.banner-frame .photo{height:auto;min-height:220px;border-radius:14px}
+.banner-frame .photo img{width:100%;height:auto;max-height:460px;object-fit:contain;background:#fff5f7}
+
+/* Favorites & THE FINAL VIDEO EDIT SHOWCASE */
+.fan-sec{background:linear-gradient(135deg,#fff9fa,#ffdce3)}
+.fan-badges{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+ max-width:900px;
+ margin:26px auto;
+}
+.fan-card{
+ background:#fff;
+ border:1px solid #f0b8c2;
+ border-radius:18px;
+ padding:22px 18px;
+ box-shadow:0 14px 36px rgba(110,7,24,.10);
+ text-align:center;
+}
+.fan-icon{font-size:38px;margin-bottom:8px;display:block}
+.fan-card h3{font-size:26px;margin:4px 0 8px;color:var(--crimson)}
+.fan-card p{font-size:15px;line-height:1.6;margin:0;color:#5e1c28}
+
+/* FABULOUS REEL EDIT SHOWCASE CARD */
+.reel-showcase{
+ display:grid;
+ grid-template-columns:minmax(260px,340px) 1fr;
+ gap:30px;
+ align-items:center;
+ max-width:900px;
+ margin:34px auto;
+ background:linear-gradient(135deg,#2b030a,#590716);
+ color:#fff;
+ border-radius:26px;
+ padding:22px;
+ box-shadow:0 24px 65px rgba(71,3,14,.45);
+ border:2px solid rgba(255,183,3,.4);
+ text-align:left;
+}
+.reel-phone-frame{
+ position:relative;
+ width:100%;
+ aspect-ratio:9/16;
+ max-height:520px;
+ background:#000;
+ border-radius:20px;
+ overflow:hidden;
+ border:3px solid #ff2a4b;
+ box-shadow:0 0 30px rgba(255,42,75,.45);
+ margin:auto;
+}
+.reel-phone-frame video{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block;
+}
+.reel-badge{
+ display:inline-block;
+ background:rgba(255,42,75,.25);
+ border:1px solid #ff4d6a;
+ color:#ffb3c0;
+ font-size:11px;
+ letter-spacing:2.5px;
+ text-transform:uppercase;
+ font-weight:700;
+ padding:6px 12px;
+ border-radius:20px;
+ margin-bottom:14px;
+}
+.reel-copy h3{
+ color:#fff;
+ font-size:clamp(32px,4.5vw,44px);
+ line-height:1.05;
+ margin:0 0 14px;
+}
+.reel-copy p{
+ color:#ffe0e5;
+ font-size:16.5px;
+ line-height:1.7;
+ margin:0 0 16px;
+}
+.sound-btn{
+ border:1px solid #ffb703;
+ background:rgba(255,183,3,.18);
+ color:#ffd166;
+ padding:11px 22px;
+ border-radius:25px;
+ font:600 14px "DM Sans",sans-serif;
+ cursor:pointer;
+ transition:.2s;
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+}
+.sound-btn:hover{background:#ffb703;color:#2b030a}
+
+/* Favorite Portrait Feature */
+.portrait-feature{
+ display:grid;
+ grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+ gap:32px;
+ align-items:center;
+ max-width:900px;
+ margin:30px auto 0;
+ background:#fff;
+ border:1px solid #f0b8c2;
+ border-radius:24px;
+ padding:18px;
+ box-shadow:var(--shadow);
+ text-align:left;
+}
+.portrait-image{height:500px;border-radius:16px;overflow:hidden;background:#fff0f3}
+.portrait-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.portrait-copy{padding:16px 20px 16px 4px}
+.portrait-tag{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:12px}
+.portrait-copy h3{font-size:40px;line-height:1.05;margin:0 0 16px}
+.portrait-copy p{font-size:17px;line-height:1.75;margin:0 0 14px}
+.portrait-line{width:70px;height:2px;background:var(--red);margin:20px 0}
+.portrait-closing{color:#7a2031}
+
+/* Profile Card */
+.profile-card{
+ max-width:900px;
+ margin:28px auto 0;
+ background:rgba(255,255,255,.96);
+ border:1px solid #f0b8c2;
+ box-shadow:var(--shadow);
+ padding:26px;
+ border-radius:22px;
+ text-align:left;
+}
+.profile-title{text-align:center;font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:700;color:var(--crimson);margin-bottom:18px}
+.profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 18px}
+.profile-item{padding:14px 16px;background:#fff7f8;border:1px solid #f5cbd2;border-radius:14px}
+.profile-item span{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#9e4756;margin-bottom:5px;font-weight:700}
+.profile-item strong{font-size:16px;color:var(--crimson)}
+.profile-note{text-align:center;margin-top:18px;font-style:italic;font-weight:700;color:var(--red)}
+
+/* Letter Page */
+.letter-page{background:linear-gradient(135deg,#fff0f3,#ffdbe2)}
+.letter{
+ max-width:790px;
+ margin:auto;
+ background:#fff;
+ padding:clamp(28px,5vw,64px);
+ text-align:left;
+ box-shadow:var(--shadow);
+ border:1px solid #f0b8c2;
+ border-radius:18px;
+ position:relative;
+}
+.letter:before{content:"";position:absolute;inset:14px;border:1px solid #f7d6dc;border-radius:12px;pointer-events:none}
+.letter-content{position:relative;z-index:2;padding:10px}
+.signature{font-family:"Great Vibes",cursive;text-align:right;font-size:36px;color:var(--red);margin-top:28px}
+
+/* Feedback Form */
+.feedback-page{background:linear-gradient(135deg,#fff7f8,#ffe0e6)}
+.feedback-card{
+ width:min(680px,100%);
+ margin:26px auto 10px;
+ background:rgba(255,255,255,.97);
+ padding:28px;
+ border:1px solid #f0b8c2;
+ border-radius:24px;
+ box-shadow:var(--shadow);
+ text-align:left;
+}
+.feedback-card label{display:block;margin:0 0 8px;color:var(--crimson);font-weight:700;font-size:14px}
+.feedback-card input,.feedback-card textarea{
+ width:100%;
+ border:1px solid #eba4b0;
+ border-radius:14px;
+ padding:14px 16px;
+ margin:0 0 18px;
+ font:16px "DM Sans",sans-serif;
+ color:var(--text);
+ background:#fffafb;
+ outline:none;
+ transition:.2s;
+}
+.feedback-card input:focus,.feedback-card textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(181,23,46,.12)}
+.feedback-card textarea{resize:vertical;min-height:140px;line-height:1.6}
+.feedback-card .btn{display:block;margin:8px auto 0}
+.feedback-note{text-align:center!important;font-size:13px!important;line-height:1.5!important;color:#8f3847;margin:14px 0 0!important}
+
+/* Floating Quick Chapter Dots Bar (Unlocks after password) */
+.chapter-nav{
+ position:fixed;
+ bottom:16px;
+ left:50%;
+ transform:translateX(-50%);
+ background:rgba(110,7,24,.92);
+ backdrop-filter:blur(8px);
+ padding:8px 14px;
+ border-radius:30px;
+ display:none;
+ gap:8px;
+ z-index:90;
+ box-shadow:0 10px 30px rgba(0,0,0,.35);
+ border:1px solid rgba(255,255,255,.2);
+}
+.chapter-nav.unlocked{display:flex}
+.nav-dot{
+ width:30px;
+ height:30px;
+ border-radius:50%;
+ border:0;
+ background:rgba(255,255,255,.15);
+ color:#fff;
+ font:700 12px "DM Sans",sans-serif;
+ cursor:pointer;
+ transition:.2s;
+}
+.nav-dot.active,.nav-dot:hover{
+ background:var(--bright-red);
+ transform:scale(1.12);
+}
+
+.footer{background:var(--crimson);color:#ffe3e8;text-align:center;padding:28px 20px 80px;font-size:14px}
+
+@media(max-width:740px){
+ section{padding:56px 16px 90px}
+ .corner{width:50px;height:50px;top:14px}.tl{left:14px}.tr{right:14px}.bl{left:14px;bottom:14px}.br{right:14px;bottom:14px}
+ .timeline-grid,.fan-badges,.portrait-feature,.profile-grid,.reel-showcase{grid-template-columns:1fr}
+ .personal-card .photo{height:330px}
+ .portrait-image{height:420px}
+ .portrait-copy{padding:16px 12px 20px}
+ .reel-copy{text-align:center}
+ .feedback-card{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="sparkCanvas"></canvas>
+
+<main class="story">
+
+<!-- SECTION 1: OPENING HERO -->
+<section class="active hero" id="s1">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌹</span><span class="decor flower f2">✨</span><span class="decor flower f3">🌹</span><span class="decor flower f4">🔥</span>
+<span class="decor heart h1">♥</span><span class="decor heart h2">♡</span><span class="decor heart h3">♥</span><span class="decor heart h4">♡</span>
+<span class="decor balloon b1">🎈</span><span class="decor balloon b2">🎈</span>
+<div class="inner">
+<div class="kicker">A Special Surprise • Made For My Brother From Another Mother</div>
+<div class="ornament"></div>
+<div class="script">Wait a second...</div>
+<h1>Are you this guy?</h1>
+<p>I built this entire red-carpet world for my closest friend since 4th class.<br/><strong>Look closely at the picture below.</strong></p>
+<div class="photo hero-photo">
+  <img class="smart-img" data-file="120430.jpg" alt="Jaswant Varma"/>
+</div>
+<p>Are you this guy? If yes, proceed to confirm it's really you.</p>
+<button class="btn" onclick="next('s2')">Yes, proceed to confirm it's me →</button>
+</div>
+</section>
+
+<!-- SECTION 2: FRONTEND PASSWORD CHECK (NO BACKEND) -->
+<section class="reveal" id="s2">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌹</span><span class="decor flower f4">✨</span><span class="decor heart h2">♥</span><span class="decor heart h3">♥</span>
+<div class="inner">
+<div class="kicker">Identity Verification</div>
+<h2>Confirm You Are Jaswant ❤️</h2>
+<div class="ornament"></div>
+<div class="photo hero-photo">
+  <img class="smart-img" data-file="120433.jpg" alt="Jaswant and Dhanunjay"/>
+</div>
+<p>Anyone can click a button, ra. Only the real <strong>Jaswant Varma</strong> knows the secret answer to this:</p>
+
+<div class="auth-box">
+  <div class="auth-question">Where do you think we met first?</div>
+  <input type="text" id="passInput" class="auth-input" placeholder="Type the password here..." autocomplete="off" onkeypress="handleEnter(event)"/>
+  <div id="authError" class="auth-error">Adhi kaadhu ra! Think properly and try again 😄</div>
+  <button class="btn" id="verifyBtn" onclick="checkPassword()">Unlock My Surprise 🔓</button>
+
+  <div id="authSuccess" class="auth-success">
+    <h3 style="margin:0 0 6px;color:var(--crimson)">Identity Confirmed: Welcome, Jashuu (#45)! 🎉🔥</h3>
+    <p style="font-size:15px;margin:0 0 12px">From 4th class to forever — your birthday story is now unlocked.</p>
+    <button class="btn" style="margin-top:6px" onclick="next('s3')">Let's go back in time →</button>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 3: TIMELINE — FROM SCHOOL UNIFORM TO NOW -->
+<section class="timeline-sec" id="s3">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🎒</span><span class="decor flower f2">🌹</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter One • The Timeline</div>
+<h2>From School Uniforms to Today 🕰️</h2>
+<div class="ornament"></div>
+<p>Friends since <strong>4th class</strong>. Living right near each other, traveling in the exact same auto and same bus, growing up side by side.</p>
+
+<div class="timeline-grid">
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120445.jpg" alt="School classroom days"/></div>
+    <div class="personal-text">
+      <div class="memory-number">01 · THE RED CHECKERED SHIRT ERA</div>
+      <p><strong><i>Back in our school benches! From 4th standard onwards, sitting in class, sharing laughs, and making memories before we even knew how fast time would fly.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120444.jpg" alt="School uniform and auto days"/></div>
+    <div class="personal-text">
+      <div class="memory-number">02 · SAME AUTO, SAME BUS, SAME ROUTE</div>
+      <p><strong><i>With our houses nearby, every morning and evening meant traveling together in the same auto and school bus. Those daily rides built a friendship for life.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120448.jpg" alt="2022 Cake Cutting"/></div>
+    <div class="personal-text">
+      <div class="memory-number">03 · HOME STAY & CAKE CUTTING (2022)</div>
+      <p><strong><i>From celebrating birthdays at home to me living at your house for 5 nights — studying together, playing together, and pulling 4 to 5 crazy night-outs!</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img contain-img" data-file="120443.jpg" alt="Candidate ID Photo"/></div>
+    <div class="personal-text">
+      <div class="memory-number">04 · 12.11.2024 · THE LEGENDARY CANDIDATE</div>
+      <p><strong><i>Still rocking that iconic olive-green shirt in your exam candidate photo! The most innocent face hiding all the madness we've done together 😂.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img contain-img" data-file="120442.jpg" alt="EAMCET Results Poster"/></div>
+    <div class="personal-text">
+      <div class="memory-number">05 · STEPPING INTO ENGINEERING</div>
+      <p><strong><i>Seeing G. Jaswanth Varma shining on the results poster for ANITS Visakhapatnam! From school uniforms to engineering — proud of how far we've come.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img contain-img" data-file="120434.jpg" alt="Pin Jashuu Video Call"/></div>
+    <div class="personal-text">
+      <div class="memory-number">06 · "PIN JASHUU" — ONE CALL AWAY</div>
+      <p><strong><i>If I have any work, I call you. If you have any work, you call me. Whether it's a movie or going out anywhere, you are always pinned at the top of my life.</i></strong></p>
+    </div>
+  </article>
+</div>
+
+<button class="btn" onclick="next('s4')">Next: That Day in Kailasagiri →</button>
+</div>
+</section>
+
+<!-- SECTION 4: KAILASAGIRI & WAX MUSEUM TRIP (STRIPED SHIRT DAY) -->
+<section class="memory" id="s4">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌊</span><span class="decor flower f2">⛰️</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Two • The Vizag Outing</div>
+<h2>A Day in Kailasagiri With You 🌊⛰️</h2>
+<div class="ornament"></div>
+<p>Whenever I go to the main city of Vizag or the beach, you are the first person I take along.<br/>Here is our unforgettable Kailasagiri &amp; Wax Museum trip in that iconic striped shirt!</p>
+
+<div class="story-frame">
+  <div class="photo" id="memoryPhoto">
+    <img class="smart-img" data-file="120422.jpg" alt="Kailasagiri memory"/>
+  </div>
+  <div class="caption" id="caption">Two brothers on top of Kailasagiri hill — where every Vizag outing becomes a core memory. ❤️</div>
+  <div class="story-controls">
+    <button onclick="prevMemory()">‹</button>
+    <span class="counter" id="counter">01 / 12</span>
+    <button onclick="nextMemory()">›</button>
+  </div>
+</div>
+
+<button class="btn" onclick="next('s5')">Night Outs &amp; Carnival Rides →</button>
+</div>
+</section>
+
+<!-- SECTION 5: NIGHT OUTS, HOME HANGOUTS & EXHIBITION RIDES -->
+<section class="nights-sec" id="s5">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🎡</span><span class="decor flower f2">🌙</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Three • Unmatched Vibe</div>
+<h2>Night Outs, Rides &amp; Brotherhood 🎡🌙</h2>
+<div class="ornament"></div>
+<p>Four to five night outs, staying 5 nights at your place, carnival wheels, and endless memories with the boys.</p>
+
+<div class="banner-frame">
+  <div class="photo"><img class="smart-img" data-file="120460.jpg" alt="Happy Birthday Collage"/></div>
+  <div class="caption" style="font-size:22px;padding:10px 6px 2px">A frame of our best days — celebrating you today and always! 🎂</div>
+</div>
+
+<div class="timeline-grid">
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120452.jpg" alt="Brothers selfie indoors"/></div>
+    <div class="personal-text">
+      <div class="memory-number">01 · FIVE NIGHTS AT YOUR HOME</div>
+      <p><strong><i>Living at your house for 5 days felt like my own second home. Studying together, playing together, and talking till late night — nothing beats those days.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120459.jpg" alt="Night out with the squad"/></div>
+    <div class="personal-text">
+      <div class="memory-number">02 · THE NIGHT-OUT SQUAD</div>
+      <p><strong><i>4 to 5 legendary night outs! Sitting together in that room with the curtains drawn, laughing non-stop and making stories we'll talk about for decades.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120438.jpg" alt="Exhibition Ferris Wheel"/></div>
+    <div class="personal-text">
+      <div class="memory-number">03 · CARNIVAL LIGHTS & GIANT WHEEL</div>
+      <p><strong><i>Standing in front of the giant wheel under the carnival lights! Every movie plan, every exhibition visit, every random evening out is incomplete without you.</i></strong></p>
+    </div>
+  </article>
+
+  <article class="personal-card">
+    <div class="photo"><img class="smart-img" data-file="120440.jpg" alt="Inside the spinning ride"/></div>
+    <div class="personal-text">
+      <div class="memory-number">04 · TOP OF THE WHEEL</div>
+      <p><strong><i>Up in the air while the whole carnival blurred behind us! Pure madness and pure happiness with my go-to partner in crime.</i></strong></p>
+    </div>
+  </article>
+</div>
+
+<button class="btn" onclick="next('s6')">Watch The Special Edit &amp; Swag 🔥 →</button>
+</div>
+</section>
+
+<!-- SECTION 6: SPECIAL BEACH NIGHT EDIT + HITMAN 45, SRH, AR RAHMAN -->
+<section class="fan-sec" id="s6">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🏏</span><span class="decor flower f4">🎶</span><span class="decor heart h2">♥</span><span class="decor heart h3">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Four • Main Character Energy</div>
+<h2>The Special Edit, Hitman #45 &amp; Swag 🔥</h2>
+<div class="ornament"></div>
+<p>From Vizag beach nights with neon edits to his all-time favorites:</p>
+
+<!-- FABULOUS FINAL VIDEO EDIT SHOWCASE -->
+<div class="reel-showcase">
+  <div class="reel-phone-frame">
+    <video id="jashuuEditVideo" loop playsinline controls preload="metadata">
+      <source id="videoSource1" src="120467.mp4" type="video/mp4"/>
+      <source id="videoSource2" src="assets/videos/120467.mp4" type="video/mp4"/>
+      <source id="videoSource3" src="assets/photos/120467.mp4" type="video/mp4"/>
+      Your browser does not support video playback.
+    </video>
+  </div>
+  <div class="reel-copy">
+    <span class="reel-badge">⚡ Final Cut • Vizag Beach Night Edit</span>
+    <h3>Main Character By The Waves 🌊🔥</h3>
+    <p>Every time we head to the Vizag beach at night, the vibe hits different. This custom beat-sync edit captures the real <strong>Jashuu</strong> — effortless style, neon glow, and pure hero aura with the ocean waves crashing behind you!</p>
+    <p style="font-size:14.5px;color:#ffb3c0;margin-bottom:18px"><i>Tap the button below to play the edit with full sound &amp; beat drops!</i></p>
+    <button type="button" class="sound-btn" onclick="playEditWithSound()">🔊 Play Edit With Sound</button>
+  </div>
+</div>
+
+<div class="fan-badges">
+  <div class="fan-card">
+    <span class="fan-icon">🏏</span>
+    <h3>Rohit Sharma #45</h3>
+    <p>Die-hard Hitman fan! Lucky number <strong>45</strong> forever — effortless class, pull shots, and pure captaincy aura.</p>
+  </div>
+  <div class="fan-card">
+    <span class="fan-icon">🧡</span>
+    <h3>Sunrisers (SRH)</h3>
+    <p>Loyal to the <strong>Orange Army</strong> through every IPL season! When SRH plays, the energy is on another level.</p>
+  </div>
+  <div class="fan-card">
+    <span class="fan-icon">🎹</span>
+    <h3>A. R. Rahman</h3>
+    <p>From soulful melodies to goosebump-inducing BGM — <strong>Isaipuyal A. R. Rahman</strong> is his ultimate musical therapy.</p>
+  </div>
+</div>
+
+<div class="portrait-feature">
+  <div class="portrait-image">
+    <img class="smart-img" data-file="120450.jpg" alt="Jaswant in shades"/>
+  </div>
+  <div class="portrait-copy">
+    <div class="portrait-tag">Hero Entry Frame · #45 Vibe</div>
+    <h3>Pure Swag, Zero Filter 😎❤️</h3>
+    <p>With those dark shades, the crisp shirt, and the greenery all around — this portrait looks straight out of a movie intro with an <strong>A. R. Rahman</strong> background score playing.</p>
+    <p>The guy who accompanies me to every movie theater now looking like a hero himself!</p>
+    <div class="portrait-line"></div>
+    <p class="portrait-closing"><i>Calm, loyal, and always standing by my side since 4th class.</i></p>
+  </div>
+</div>
+
+<button class="btn" onclick="next('s7')">About Jaswant Varma →</button>
+</div>
+</section>
+
+<!-- SECTION 7: ABOUT JASWANT PROFILE CARD -->
+<section class="about" id="s7">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌹</span><span class="decor flower f4">✨</span><span class="decor heart h2">♥</span><span class="decor heart h3">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Five • The Legend Himself</div>
+<h2>About Jaswant Varma ❤️</h2>
+<div class="ornament"></div>
+<p class="script">The guy behind a decade of friendship.</p>
+
+<div class="profile-card">
+  <div class="profile-title">G. Jaswant Varma ✨</div>
+  <div class="profile-grid">
+    <div class="profile-item"><span>Friends Since</span><strong>4th Class (School Auto &amp; Bus Days) 🚌</strong></div>
+    <div class="profile-item"><span>Lucky Number &amp; Idol</span><strong>45 · Rohit Sharma (The Hitman) 🏏</strong></div>
+    <div class="profile-item"><span>IPL Team</span><strong>Sunrisers Hyderabad (SRH) 🧡🔥</strong></div>
+    <div class="profile-item"><span>Favorite Music Director</span><strong>A. R. Rahman 🎶🎹</strong></div>
+    <div class="profile-item"><span>College &amp; City</span><strong>ANITS · Visakhapatnam 🌊</strong></div>
+    <div class="profile-item"><span>Role In My Life</span><strong>Movie Partner, Vizag Trip Companion &amp; 1st Call For Everything 🤝</strong></div>
+  </div>
+  <p class="profile-note">5 nights at his home, 4–5 crazy night outs, endless beach rides, and a brotherhood for life. ❤️</p>
+</div>
+
+<button class="btn" onclick="next('s8')">Read My Birthday Letter 💌</button>
+</div>
+</section>
+
+<!-- SECTION 8: BIRTHDAY LETTER -->
+<section class="letter-page" id="s8">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌹</span><span class="decor flower f2">✨</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Six • A Letter From Your Best Friend</div>
+<div class="ornament"></div>
+
+<div class="letter">
+  <div class="letter-content">
+    <div class="script">Dear Jaswant (Jashuu),</div>
+    <p><strong>Happy Birthday, brother! 🎂❤️</strong></p>
+    <p>Not everyone is lucky enough to keep a friend from <strong>4th class</strong> all the way into college and adulthood. Because our houses were so close, we grew up traveling in the same auto, riding the same school bus, studying together, and playing together every single day.</p>
+    <p>Today, you are the first person I call whenever I have any work, and I know I'm the first person you call whenever you need anything. Whether it's catching every new movie, heading out to the Vizag beach, climbing around Kailasagiri, or staying over at your house for 5 nights straight — every memory with you is gold.</p>
+    <p>May this year bring you massive sixes in life just like <strong>Rohit Sharma (#45)</strong>, unstoppable victories like <strong>Sunrisers Hyderabad</strong>, and days that feel as magical as an <strong>A. R. Rahman</strong> soundtrack.</p>
+    <p><strong>Thank you for always showing up for me. Here's to many more night outs, trips, and lifetimes of brotherhood!</strong></p>
+    <div class="signature">Always your brother,<br/>Dhanunjay Reddy ❤️</div>
+  </div>
+</div>
+
+<p class="script">Happy Birthday, Jaswant Varma! 🎈🎂🔥</p>
+<button class="btn" onclick="next('s9')">Write Something Back To Me 💌</button>
+</div>
+</section>
+
+<!-- SECTION 9: FEEDBACK / REPLY TO DHANUNJAY -->
+<section class="feedback-page" id="s9">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<span class="decor flower f1">🌹</span><span class="decor flower f2">✨</span><span class="decor flower f3">🔥</span><span class="decor heart h1">♥</span><span class="decor heart h4">♡</span>
+<div class="inner">
+<div class="kicker">Chapter Seven • Your Turn, Jashuu</div>
+<div class="ornament"></div>
+<h2>Send a Message to Dhanunjay 💌</h2>
+<p class="script">I put our whole journey into this website... now tell me how you felt!</p>
+
+<form class="feedback-card" onsubmit="sendFeedback(event)">
+  <label for="feedbackName">Your Name</label>
+  <input id="feedbackName" name="name" type="text" value="Jaswant Varma (#45)" placeholder="Your name"/>
+  <label for="feedbackMessage">Your Message</label>
+  <textarea id="feedbackMessage" name="message" rows="6" placeholder="Write whatever you want to tell me, ra... ❤️" required></textarea>
+  <button class="btn" type="submit">Send it to Dhanunjay ❤️</button>
+  <p class="feedback-note">It will open your email app addressed directly to <strong>dhanunjayreddy905@gmail.com</strong>.</p>
+</form>
+
+<button class="btn secondary-btn" onclick="next('s1')">Replay Our Story From The Start ↻</button>
+</div>
+</section>
+
+<div class="footer">Made especially for Jaswant Varma (#45) • 4th Class to Forever • By Dhanunjay ❤️</div>
+</main>
+
+<!-- Floating Quick Navigation Bar (Unlocks after password verification) -->
+<nav class="chapter-nav" id="chapterNav" title="Jump to any chapter">
+  <button class="nav-dot active" onclick="next('s1')">1</button>
+  <button class="nav-dot" onclick="next('s2')">2</button>
+  <button class="nav-dot" onclick="next('s3')">3</button>
+  <button class="nav-dot" onclick="next('s4')">4</button>
+  <button class="nav-dot" onclick="next('s5')">5</button>
+  <button class="nav-dot" onclick="next('s6')">6</button>
+  <button class="nav-dot" onclick="next('s7')">7</button>
+  <button class="nav-dot" onclick="next('s8')">8</button>
+  <button class="nav-dot" onclick="next('s9')">9</button>
+</nav>
+
+<script>
+// 1. Smart image loader: works whether files are in root ("120430.jpg") OR in "assets/photos/120430.jpg"
+function resolveImagePath(imgElement, filename) {
+  const paths = [
+    filename,
+    "assets/photos/" + filename,
+    "photos/" + filename
+  ];
+  let attempt = 0;
+  imgElement.src = paths[attempt];
+  imgElement.onerror = function() {
+    attempt++;
+    if (attempt < paths.length) {
+      imgElement.src = paths[attempt];
+    }
+  };
+}
+
+document.querySelectorAll(".smart-img").forEach(img => {
+  resolveImagePath(img, img.getAttribute("data-file"));
+});
+
+// 2. Section navigation & Video auto-pause when leaving Section 6
+const sections = [...document.querySelectorAll("section")];
+const navDots = [...document.querySelectorAll(".nav-dot")];
+
+function next(id) {
+  sections.forEach(s => s.classList.remove("active"));
+  const target = document.getElementById(id);
+  target.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const idx = parseInt(id.replace("s", ""), 10) - 1;
+  navDots.forEach((d, i) => d.classList.toggle("active", i === idx));
+
+  const editVid = document.getElementById("jashuuEditVideo");
+  if (editVid) {
+    if (id === "s6") {
+      editVid.play().catch(() => {});
+    } else {
+      editVid.pause();
+    }
+  }
+}
+
+// 3. Play the Final Edit Video with Sound on Button Tap
+function playEditWithSound() {
+  const vid = document.getElementById("jashuuEditVideo");
+  if (!vid) return;
+  vid.muted = false;
+  vid.currentTime = 0;
+  vid.play();
+}
+
+// 4. Frontend-only Password Verification ("Deepal") + Celebration Burst
+function checkPassword() {
+  const input = document.getElementById("passInput").value.trim().toLowerCase();
+  const errorEl = document.getElementById("authError");
+  const successEl = document.getElementById("authSuccess");
+  const verifyBtn = document.getElementById("verifyBtn");
+
+  if (input === "deepal") {
+    errorEl.style.display = "none";
+    verifyBtn.style.display = "none";
+    document.getElementById("passInput").disabled = true;
+    successEl.style.display = "block";
+    document.getElementById("chapterNav").classList.add("unlocked");
+    burstConfetti();
+  } else {
+    errorEl.style.display = "block";
+  }
+}
+
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    checkPassword();
+  }
+}
+
+// 5. Kailasagiri & Wax Museum Carousel (12 unique photos from the striped shirt trip)
+const memories = [
+  ["120422.jpg", "Two brothers on top of Kailasagiri hill — where every Vizag outing becomes a core memory. ❤️"],
+  ["120430.jpg", "Framed inside the iconic red circle with the entire Vizag beach coastline behind you! 🌊"],
+  ["120431.jpg", "Looking out at the sea like a true main character. ✨"],
+  ["120423.jpg", "Close-up selfie right by the red point on Kailasagiri hill! 😎"],
+  ["120421.jpg", "With the blue ocean and green hills behind you — pure Vizag vibes. 🌴🌊"],
+  ["120424.jpg", "Chilling on the viewpoint railing high above Rushikonda & RK Beach! ⛰️"],
+  ["120428.jpg", "That classic smile when we're out exploring the city together. 😄"],
+  ["120426.jpg", "Taking in the entire view of Visakhapatnam from the top of the hill. 🌅"],
+  ["120455.jpg", "Climbing right to the top of the park arch together — still kids at heart! 😂🔥"],
+  ["120456.jpg", "The whole gang hanging out in the park during our Kailasagiri trip! 🤝"],
+  ["120429.jpg", "Striking a royal pose right next to Baahubali at the Wax Museum! ⚔️🎬"],
+  ["120441.jpg", "Holding Gandhiji's staff with APJ Abdul Kalam beside you — iconic museum moment! 🇮🇳"]
+];
+
+let i = 0;
+function renderMemory() {
+  const frame = document.getElementById("memoryPhoto");
+  frame.innerHTML = '<img id="carouselActiveImg" alt="Kailasagiri Memory ' + String(i + 1).padStart(2, "0") + '">';
+  const activeImg = document.getElementById("carouselActiveImg");
+  resolveImagePath(activeImg, memories[i][0]);
+  document.getElementById("caption").textContent = memories[i][1];
+  document.getElementById("counter").textContent = String(i + 1).padStart(2, "0") + " / " + String(memories.length).padStart(2, "0");
+}
+
+function nextMemory() {
+  i = (i + 1) % memories.length;
+  renderMemory();
+}
+
+function prevMemory() {
+  i = (i - 1 + memories.length) % memories.length;
+  renderMemory();
+}
+
+// 6. Email Feedback Handler
+function sendFeedback(event) {
+  event.preventDefault();
+  const name = document.getElementById("feedbackName").value.trim();
+  const message = document.getElementById("feedbackMessage").value.trim();
+  if (!message) return;
+  const subject = "A Birthday Reply from Jaswant Varma ❤️";
+  const body = (name ? "From: " + name + "\n\n" : "") + message;
+  window.location.href = "mailto:dhanunjayreddy905@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+
+// 7. Lightweight Confetti Burst on Password Unlock
+const canvas = document.getElementById("sparkCanvas");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function burstConfetti() {
+  const colors = ["#e31b38", "#ffb703", "#ff4d6a", "#ffffff", "#ff758f"];
+  for (let k = 0; k < 75; k++) {
+    particles.push({
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      vx: (Math.random() - 0.5) * 14,
+      vy: (Math.random() - 0.8) * 14,
+      size: Math.random() * 7 + 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 1
+    });
+  }
+  requestAnimationFrame(updateParticles);
+}
+
+function updateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.28;
+    p.alpha -= 0.014;
+    ctx.globalAlpha = Math.max(p.alpha, 0);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x, p.y, p.size, p.size);
+  });
+  particles = particles.filter(p => p.alpha > 0);
+  if (particles.length > 0) {
+    requestAnimationFrame(updateParticles);
+  }
+}
+</script>
+</body>
+</html>
